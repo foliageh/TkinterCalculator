@@ -46,11 +46,8 @@ def strToSortlist(event):
 btn.bind('<Button-1>', strToSortlist)
 ent.bind('<Return>', strToSortlist)
 
-# ent1.grid(row=0, column=0)
 ent.grid(row=1, column=0)
 btn.grid(row=2, column=0)
 lab.grid(row=3, column=0)
-# chb.grid(row=0, column=0)
-# sck.grid(row=0, column=0)
 
 root.mainloop()
