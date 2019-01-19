@@ -15,28 +15,28 @@ def strToSortlist(event):
     s.strip()
     if (s.find('*')!=-1):
         zn = '*'
-        n1 = int(s[:s.find(zn)])
-        n2 = int(s[s.find(zn) + 1:])
+        n1 = float(s[:s.find(zn)])
+        n2 = float(s[s.find(zn) + 1:])
         ans = n1 * n2
     elif (s.find('+')!=-1):
         zn = '+'
-        n1 = int(s[:s.find(zn)])
-        n2 = int(s[s.find(zn) + 1:])
+        n1 = float(s[:s.find(zn)])
+        n2 = float(s[s.find(zn) + 1:])
         ans = n1 + n2
     elif (s.find('-')!=-1):
         zn = '-'
-        n1 = int(s[:s.find(zn)])
-        n2 = int(s[s.find(zn) + 1:])
+        n1 = float(s[:s.find(zn)])
+        n2 = float(s[s.find(zn) + 1:])
         ans = n1 - n2
     elif (s.find('^')!=-1):
         zn = '^'
-        n1 = int(s[:s.find(zn)])
-        n2 = int(s[s.find(zn) + 1:])
+        n1 = float(s[:s.find(zn)])
+        n2 = float(s[s.find(zn) + 1:])
         ans = n1 ** n2
     else:
         zn = '/'
-        n1 = int(s[:s.find(zn)])
-        n2 = int(s[s.find(zn) + 1:])
+        n1 = float(s[:s.find(zn)])
+        n2 = float(s[s.find(zn) + 1:])
         ans = n1/n2
     #s = s.split()
     #s.sort()
