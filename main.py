@@ -1,4 +1,5 @@
 from tkinter import *
+import math
 
 root = Tk()
 
@@ -6,14 +7,16 @@ ent = Entry(width=100)
 btn = Button(text="Посчитать", height=3, width=30, bg='aqua', font='arial 26')
 lab = Label(bg='black', fg='white', height=3, width=30, font='arial 26')
 
-
 def strToSortlist(event):
     s = ent.get()
     s.strip()
+    s = s.replace('pi', 'math.pi')
+    s = s.replace('e', 'math.e')
+    s = s.replace('^', '**')
     try:
         lab['text'] = ent.get()+'='+str(eval(s))
     except:
-        lab['text'] = 'НЕ КОРРЕКТНОЕ ВЫРАЖЕНИЕ!'
+        lab['text'] = 'НЕКОРРЕКТНОЕ ВЫРАЖЕНИЕ!'
 
 
 btn.bind('<Button-1>', strToSortlist)
