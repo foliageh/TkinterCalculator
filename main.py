@@ -3,11 +3,9 @@ from tkinter import *
 root = Tk()
 
 ent = Entry(width=100)
-#ent1 = Entry(width=100)
 btn = Button(text="Посчитать", height=3, width=30, bg='aqua', font='arial 26')
 lab = Label(bg='black', fg='white', height=3, width=30, font='arial 26')
-# chb = Checkbutton(text="Поставьте галочку")
-# sck = Scale()
+
 
 
 def strToSortlist(event):
@@ -37,10 +35,14 @@ def strToSortlist(event):
         zn = '/'
         n1 = float(s[:s.find(zn)])
         n2 = float(s[s.find(zn) + 1:])
-        ans = n1/n2
-    #s = s.split()
-    #s.sort()
-    lab['text'] = ent.get()+'='+str(ans)
+        if n2 != 0:
+            ans = n1 / n2
+        else:
+            ans = 'НА 0 ДЕЛИТЬ НЕЛЬЗЯ, ДЕБИЛЫ!'
+    if ans == 'НА 0 ДЕЛИТЬ НЕЛЬЗЯ, ДЕБИЛЫ!':
+        lab['text'] = str(ans)
+    else:
+        lab['text'] = ent.get()+'='+str(ans)
 
 
 btn.bind('<Button-1>', strToSortlist)
