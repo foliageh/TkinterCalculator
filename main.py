@@ -44,7 +44,7 @@ def strToSortlist(event):
 
 
 btn.bind('<Button-1>', strToSortlist)
-
+ent.bind('<Return>', strToSortlist)
 
 # ent1.grid(row=0, column=0)
 ent.grid(row=1, column=0)
