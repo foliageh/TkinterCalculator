@@ -7,42 +7,13 @@ btn = Button(text="Посчитать", height=3, width=30, bg='aqua', font='ari
 lab = Label(bg='black', fg='white', height=3, width=30, font='arial 26')
 
 
-
 def strToSortlist(event):
     s = ent.get()
     s.strip()
-    if (s.find('*')!=-1):
-        zn = '*'
-        n1 = float(s[:s.find(zn)])
-        n2 = float(s[s.find(zn) + 1:])
-        ans = n1 * n2
-    elif (s.find('+')!=-1):
-        zn = '+'
-        n1 = float(s[:s.find(zn)])
-        n2 = float(s[s.find(zn) + 1:])
-        ans = n1 + n2
-    elif (s.find('-')!=-1):
-        zn = '-'
-        n1 = float(s[:s.find(zn)])
-        n2 = float(s[s.find(zn) + 1:])
-        ans = n1 - n2
-    elif (s.find('^')!=-1):
-        zn = '^'
-        n1 = float(s[:s.find(zn)])
-        n2 = float(s[s.find(zn) + 1:])
-        ans = n1 ** n2
-    else:
-        zn = '/'
-        n1 = float(s[:s.find(zn)])
-        n2 = float(s[s.find(zn) + 1:])
-        if n2 != 0:
-            ans = n1 / n2
-        else:
-            ans = 'НА 0 ДЕЛИТЬ НЕЛЬЗЯ, ДЕБИЛЫ!'
-    if ans == 'НА 0 ДЕЛИТЬ НЕЛЬЗЯ, ДЕБИЛЫ!':
-        lab['text'] = str(ans)
-    else:
-        lab['text'] = ent.get()+'='+str(ans)
+    try:
+        lab['text'] = ent.get()+'='+str(eval(s))
+    except:
+        lab['text'] = 'НЕ КОРРЕКТНОЕ ВЫРАЖЕНИЕ!'
 
 
 btn.bind('<Button-1>', strToSortlist)
