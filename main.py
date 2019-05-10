@@ -1,5 +1,5 @@
 from tkinter import *
-import math
+from math import *
 
 root = Tk()
 
@@ -10,8 +10,6 @@ lab = Label(bg='black', fg='white', height=3, width=30, font='arial 26')
 def strToSortlist(event):
     s = ent.get()
     s.strip()
-    s = s.replace('pi', 'math.pi')
-    s = s.replace('e', 'math.e')
     s = s.replace('^', '**')
     try:
         lab['text'] = ent.get()+'='+str(eval(s))
