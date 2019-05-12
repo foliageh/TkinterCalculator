@@ -10,6 +10,7 @@ lab = Label(bg='black', fg='white', height=3, width=30, font='arial 26')
 def strToSortlist(event):
     s = ent.get()
     s = s.replace(' ', '')
+    s = s.replace(',', '.')
     s0 = s
     s = s.replace('^', '**')
     try:
