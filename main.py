@@ -13,7 +13,10 @@ def strToSortlist(event):
     s0 = s
     s = s.replace('^', '**')
     try:
-        lab['text'] = s0+'='+str(eval(s))
+        ans = str(eval(s))
+        lab['text'] = s0 + '=' + ans
+        if len(lab['text']) > 31:
+            lab['text'] = ans
     except:
         lab['text'] = 'НЕКОРРЕКТНОЕ ВЫРАЖЕНИЕ!'
 
