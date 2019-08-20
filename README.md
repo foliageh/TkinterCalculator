@@ -1,1 +1,1 @@
-# FirstGithubProject_Kvantorium
+# Простой и функциональный калькулятор
